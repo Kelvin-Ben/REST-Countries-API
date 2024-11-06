@@ -2,7 +2,7 @@ import CountryList from './components/CountryList'
 import './index.css'
 const App = () => {
   return (
-    <div className='text-3xl'>
+    <div className='px-9'>
       <CountryList />
     </div>
   )

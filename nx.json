@@ -9,9 +9,6 @@
     },
     "lint": {
       "cache": true
-    },
-    "typecheck": {
-      "cache": true
     }
   },
   "defaultBase": "main",
@@ -33,5 +30,6 @@
         "typecheckTargetName": "typecheck"
       }
     }
-  ]
+  ],
+  "nxCloudId": "672a0b69ef76bd6c1baf8866"
 }

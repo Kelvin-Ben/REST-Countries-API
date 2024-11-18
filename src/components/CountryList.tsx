@@ -1,13 +1,15 @@
-import { useRecoilState } from "recoil";
+
+import { useRecoilValue } from "recoil";
+import { countryDataState } from "../utils/recoilState";
 import Country from "./Country";
-import { countryDataAtom, Countries } from '../utils/recoilState.js';
-// access data here and loop through the data
+
 const CountryList = () => {
-  const { data }: Countries[] = useRecoilState(countryDataAtom)
-  console.log(data)
+  const countries = useRecoilValue(countryDataState);
   return (
     <div className="flex flex-wrap sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-4">
-      <Country />
+      {countries.map((country => (
+        <Country key={country.name} {...country} />
+      )))}
     </div>
   );
 };

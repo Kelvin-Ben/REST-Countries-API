@@ -1,16 +1,14 @@
 import { atom } from 'recoil';
-import countriesData from '../../data.json';
 
-export interface Countries {
-  img: string,
-  title: string,
+export interface CountryInterface {
+  name: string,
   population: number,
-  capital: string
+  capital?: string,
+  region: string,
+  flag: string,
 }
 
-const countryDataAtom = atom({
+export const countryDataState = atom<CountryInterface[]>({
   key: 'countriesState',
-  default: countriesData
+  default: []
 });
-
-export {countryDataAtom}

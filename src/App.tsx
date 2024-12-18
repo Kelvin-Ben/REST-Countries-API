@@ -1,12 +1,18 @@
-import CountryList from './components/CountryList'
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import LoadCountries from './components/LoadCountries'
 import './index.css'
+import CountryDetailPage from './components/CountryDetailPage'
 const App = () => {
   return (
-    <div className='px-9'>
-      <LoadCountries />
-      <CountryList />
-    </div>
+    <Router>
+      <Routes>
+        {/* <Switch> */}
+          <Route path='/' element={<LoadCountries />} />
+          <Route path='country/:numericCode' element={<CountryDetailPage />} />
+          {/* <Route path='*' render={() => <Redirect to='/' />} /> */}
+        {/* </Switch> */}
+      </Routes>
+    </Router>
   )
 }
-export default App
+export default App;

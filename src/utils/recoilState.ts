@@ -6,9 +6,10 @@ export interface CountryInterface {
   capital?: string,
   region: string,
   flag: string,
+  numericCode: string,
 }
 
 export const countryDataState = atom<CountryInterface[]>({
   key: 'countriesState',
-  default: []
+  default: [],
 });

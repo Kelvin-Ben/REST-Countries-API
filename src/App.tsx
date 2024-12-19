@@ -2,8 +2,11 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import LoadCountries from './components/LoadCountries'
 import './index.css'
 import CountryDetailPage from './components/CountryDetailPage'
+import SearchTerm from './components/SearchTerm';
 const App = () => {
   return (
+    <>
+    <SearchTerm />
     <Router>
       <Routes>
         {/* <Switch> */}
@@ -13,6 +16,7 @@ const App = () => {
         {/* </Switch> */}
       </Routes>
     </Router>
+    </>
   )
 }
 export default App;

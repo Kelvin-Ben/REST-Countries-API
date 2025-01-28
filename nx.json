@@ -9,9 +9,6 @@
     },
     "lint": {
       "cache": true
-    },
-    "typecheck": {
-      "cache": true
     }
   },
   "defaultBase": "main",

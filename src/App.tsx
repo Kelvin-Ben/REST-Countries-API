@@ -1,22 +1,24 @@
-import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import LoadCountries from './components/LoadCountries'
-import './index.css'
-import CountryDetailPage from './components/CountryDetailPage'
-import SearchTerm from './components/SearchTerm';
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import "./index.css";
+import CountryDetailPage from "./components/CountryDetailPage";
+import SearchTerm from "./components/SearchTerm";
+import CountryList from "./components/CountryList";
+import { useFetchCountries } from "./utils/hooks";
+import ContinentSelector from "./components/ContinentSelector";
+
 const App = () => {
+  useFetchCountries();
   return (
     <>
-    <SearchTerm />
-    <Router>
-      <Routes>
-        {/* <Switch> */}
-          <Route path='/' element={<LoadCountries />} />
-          <Route path='country/:numericCode' element={<CountryDetailPage />} />
-          {/* <Route path='*' render={() => <Redirect to='/' />} /> */}
-        {/* </Switch> */}
-      </Routes>
-    </Router>
+      <SearchTerm />
+      <ContinentSelector />
+      <Router>
+        <Routes>
+          <Route path="/" element={<CountryList />} />
+          <Route path="country/:numericCode" element={<CountryDetailPage />} />
+        </Routes>
+      </Router>
     </>
-  )
-}
+  );
+};
 export default App;

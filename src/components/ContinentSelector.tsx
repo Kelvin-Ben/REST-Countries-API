@@ -7,8 +7,7 @@ const ContinentSelector = () => {
     setSelectedContinent(e.currentTarget.value);
   }
   return (
-    <div>
-      <select onChange={handleContinentChange}>
+      <select onChange={handleContinentChange} className="dark:bg-[#2B3844]">
         <option value="">Filter by Region</option>
         <option value="Africa">Africa</option>
         <option value="Americas">Americas</option>
@@ -16,7 +15,6 @@ const ContinentSelector = () => {
         <option value="Europe">Europe</option>
         <option value="Oceania">Oceania</option>
       </select>
-    </div>
   );
 };
 export default ContinentSelector;

@@ -9,7 +9,7 @@ const Country = ({
 }: CountryInterface) => {
   return (
     <>
-      <div className="w-full shadow-lg border rounded-md bg-inherit dark:bg-inherit">
+      <div className="w-full shadow-lg rounded-md bg-inherit dark:bg-[#2B3844]">
         <img src={flag} className="w-full rounded-t-md" alt={`${name} flag`} />
         <h1 className="text-2xl font-bold py-2 px-4">{name}</h1>
         <div className="flex flex-col px-4 pb-6">

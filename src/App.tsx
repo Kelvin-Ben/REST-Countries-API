@@ -11,12 +11,12 @@ const App = () => {
   useFetchCountries();
   return (
     <Router>
-      <div className="min-h-[100vh] dark:bg-gray-900 dark:text-white">
+      <div className="min-h-[100vh] bg-gray-200 dark:bg-gray-900 dark:text-white">
           <Header />
           <Routes>
               <Route path="/" element={
                 <div className="">
-                  <div className="flex justify-between px-[3rem] py-[1rem]">
+                  <div className="flex justify-between px-[3rem] py-[1rem] border">
                     <SearchTerm />
                     <ContinentSelector />
                   </div>

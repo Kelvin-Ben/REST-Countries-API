@@ -3,7 +3,7 @@ import { useTheme } from "./ThemeContext"
 const Header = () => {
   const {theme, toggleTheme} = useTheme();
   return (
-    <header className="flex justify-between px-[3rem] py-[2rem] mb-[3rem] text-black dark:bg-[#2B3844] dark:text-white">
+    <header className="flex justify-between px-[3rem] py-6 mb-[3rem] bg-white text-black dark:bg-[#2B3844] dark:text-white">
       <h1>Where in the world?</h1>
       <button onClick={toggleTheme} className="flex items-center">
         {theme === "dark" ? (

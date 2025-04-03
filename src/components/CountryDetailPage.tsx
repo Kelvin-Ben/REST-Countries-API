@@ -31,7 +31,7 @@ const CountryDetailPage = () => {
     );
 
   return (
-    <div className="flex flex-col h-full w-full px-10 xsm:px-6 md:border xl:px-12">
+    <div className="flex flex-col h-full w-full px-10 xsm:px-6 xl:px-12">
       <div className="xl:text-xl py-4 mb-10">
         <Link
           className="xsm:text-sm xsm:py-1 xsm:px-3 xl:py-2 xl:px-5 bg-white rounded-md border border-[#808080]/50 dark:bg-[#2B3844] dark:border-none"
@@ -40,7 +40,7 @@ const CountryDetailPage = () => {
           &larr; Back
         </Link>
       </div>
-      <div className="flex xsm:max-md:flex-col md:border md:gap-x-10 xl:gap-[10rem]">
+      <div className="flex xsm:max-md:flex-col md:gap-x-10 xl:gap-[10rem]">
         <img
           src={countryDetail.flag}
           className="xsm:w-[40%] md:my-auto h-full xsm:max-md:w-full xsm:mb-10 rounded-md"

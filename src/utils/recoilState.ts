@@ -20,11 +20,12 @@ export interface CountryInterface {
   flag: string;
   numericCode: string;
   nativeName: string;
-  subRegion?: string;
+  subregion?: string;
   topLevelDomain: string[];
   currencies?: Currency[];
   languages: Language[];
   borders?: string[];
+  alpha3Code: string;
 }
 
 export const countryDataAtom = atom<CountryInterface[]>({
@@ -47,23 +48,24 @@ export const filteredCountrySelector = selector({
   key: "filteredCountry",
   get: ({ get }) => {
     const countries = get(countryDataAtom);
-    const searchTerm = get(searchTermAtom);
+    const searchTerm = get(searchTermAtom)
+      .toLowerCase()
+      .trim()
+      .replace(/\s/g, "");
     const selectedContinent = get(selectedContinentAtom);
 
+    let filteredCountries = selectedContinent
+      ? countries.filter((country) => country.region === selectedContinent)
+      : countries;
+
     if (searchTerm) {
-      return countries.filter(
+      filteredCountries = filteredCountries.filter(
         (country) =>
           country.name.toLowerCase().includes(searchTerm) ||
           country.nativeName.toLowerCase().includes(searchTerm)
       );
     }
 
-    if (selectedContinent) {
-      return countries.filter(
-        (country) => country.region === selectedContinent
-      );
-    }
-
-    return countries;
+    return filteredCountries;
   },
 });

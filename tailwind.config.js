@@ -6,7 +6,18 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        "xsm": '300px',
+        "desktop": '1900px'
+      },
+      colors: {
+        "pale": "#808080",
+      },
+      fontSize: {
+        "small": '15px'
+      }
+    },
   },
   plugins: [],
 }

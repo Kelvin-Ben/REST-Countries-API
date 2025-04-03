@@ -6,9 +6,9 @@ const CountryList = () => {
   const countries = useRecoilValue(filteredCountrySelector);
 
   return (
-    <div className="flex flex-wrap sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-4">
+    <div className="container mx-auto mt-5 xsm:max-md:w-[100%] grid gap-12 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 desktop:w-[85%]">
       {countries.map((country) => (
-        <Link to={`/country/${country.numericCode}`} key={country.numericCode}>
+        <Link to={`/country/${country.alpha3Code}`} key={country.alpha3Code}>
           <Country {...country} />
         </Link>
       ))}

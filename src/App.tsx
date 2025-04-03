@@ -12,21 +12,24 @@ const App = () => {
   return (
     <Router>
       <div className="min-h-[100vh] bg-gray-200 dark:bg-gray-900 dark:text-white">
-          <Header />
-          <Routes>
-              <Route path="/" element={
-                <div className="">
-                  <div className="flex justify-between px-[3rem] py-[1rem] border">
-                    <SearchTerm />
-                    <ContinentSelector />
-                  </div>
-                  <CountryList />
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <div className="px-[3rem]">
+                <div className="flex xsm:max-md:flex-col xsm:max-md:gap-10 justify-between py-[1rem] dark:text-white desktop:px-[8.5rem]">
+                  <SearchTerm />
+                  <ContinentSelector />
                 </div>
-                } />
-              <Route path="country/:numericCode" element={<CountryDetailPage />} />
-          </Routes>
+                <CountryList />
+              </div>
+            }
+          />
+          <Route path="/country/:alpha3Code" element={<CountryDetailPage />} />
+        </Routes>
       </div>
-        </Router>
+    </Router>
   );
 };
 export default App;
